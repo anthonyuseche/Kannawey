@@ -1,5 +1,5 @@
 // Importa el paquete correcto (con "M") como en tu package.json
-import { GoogleGenAI, Type } from "@google/gemai"; 
+import { GoogleGenAI, Type } from "@google/genai"; 
 import { ViralIdea, ContentPillar } from '../types';
 
 // 1. Vite usa 'import.meta.env' en lugar de 'process.env'
