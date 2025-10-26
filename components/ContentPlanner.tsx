@@ -135,8 +135,8 @@ const ContentPlanner: React.FC = () => {
 
     return (
         <div className="p-4 md:p-8 animate-fade-in">
-            <div className="flex justify-between items-center mb-6">
-                 <h2 className="text-3xl font-black font-title">Calendario Estratégico</h2>
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 sm:gap-0">
+                 <h2 className="text-2xl sm:text-3xl font-black font-title text-center sm:text-left">Calendario Estratégico</h2>
                  <button onClick={() => setEditingItem({} as ContentItem)} className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:opacity-90 transition-opacity">
                     + Añadir Publicación
                  </button>

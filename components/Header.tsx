@@ -22,7 +22,7 @@ const NavItem: React.FC<{
       }`}
     >
       {icon}
-      <span>{label}</span>
+      <span className="hidden md:inline">{label}</span>
     </button>
   );
 };
@@ -57,12 +57,12 @@ const Header: React.FC<HeaderProps> = ({ activeView, setActiveView }) => {
       <div className="absolute top-0 left-0 w-full h-full bg-background/70 -z-10"></div>
       
       {/* Header Content */}
-      <div className="container mx-auto flex justify-between items-center relative">
+      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center relative gap-4 sm:gap-0">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 bg-gradient-to-tr from-purple-600 via-pink-600 to-orange-500 rounded-full"></div>
-          <h1 className="text-xl font-black tracking-wider text-white font-title">KANNAWEY - Sistema de Gestión</h1>
+          <h1 className="text-lg sm:text-xl font-black tracking-wider text-white font-title text-center sm:text-left">KANNAWEY - Sistema de Gestión</h1>
         </div>
-        <nav className="flex items-center space-x-1 bg-background/60 p-1 rounded-lg">
+        <nav className="flex items-center flex-wrap justify-center gap-1 bg-background/60 p-1 rounded-lg">
           {navItems.map((item) => (
             <NavItem
               key={item.id}

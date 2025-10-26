@@ -67,7 +67,7 @@ const Dashboard: React.FC = () => {
         </div>
         <div className="mt-6">
             <h4 className="font-semibold text-sm text-secondary mb-2">Editar Datos</h4>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 {followerData.map((entry, index) => (
                     <div key={entry.name} className="flex items-center gap-2 bg-background/50 p-2 rounded">
                         <label htmlFor={`follower-${index}`} className="text-xs text-muted flex-1">{entry.name}</label>
@@ -99,7 +99,7 @@ const Dashboard: React.FC = () => {
         </div>
         <div className="mt-6">
             <h4 className="font-semibold text-sm text-secondary mb-2">Editar Datos</h4>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {engagementData.map((entry, index) => (
                     <div key={entry.name} className="flex items-center gap-2 bg-background/50 p-2 rounded">
                         <label htmlFor={`engagement-${index}`} className="text-xs text-muted flex-1">{entry.name}</label>
@@ -142,7 +142,7 @@ const Dashboard: React.FC = () => {
             </div>
              <div className="mt-6">
                 <h4 className="font-semibold text-sm text-secondary mb-2">Editar Datos (%)</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
                     {distributionData.map((entry, index) => (
                         <div key={entry.name} className="flex items-center gap-2 bg-background/50 p-2 rounded">
                             <label htmlFor={`dist-${index}`} className="text-xs text-muted flex-1">{entry.name}</label>

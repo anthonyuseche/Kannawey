@@ -48,7 +48,7 @@ const IdeaGenerator: React.FC = () => {
         <div className="p-4 md:p-8 animate-fade-in">
             <div className="max-w-4xl mx-auto text-center">
                 <SparklesIcon className="h-12 w-12 mx-auto text-pink-500" />
-                <h2 className="text-3xl font-black font-title mt-4">Generador de Ideas Virales</h2>
+                <h2 className="text-2xl sm:text-3xl font-black font-title mt-4">Generador de Ideas Virales</h2>
                 <p className="text-muted mt-2 mb-8">Usa la IA para crear la próxima tendencia viral de Kannawey.</p>
                 
                 <form onSubmit={handleSubmit} className="bg-surface p-6 rounded-xl shadow-lg border border-white/10 flex flex-col md:flex-row items-center gap-4">

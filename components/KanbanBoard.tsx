@@ -145,7 +145,7 @@ const KanbanBoard: React.FC = () => {
 
   return (
     <div className="p-4 md:p-8 animate-fade-in">
-      <h2 className="text-3xl font-black font-title mb-6 text-center">Tablero de Tareas</h2>
+      <h2 className="text-2xl sm:text-3xl font-black font-title mb-6 text-center">Tablero de Tareas</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {columnOrder.map(columnId => {
           const column = columns[columnId];
