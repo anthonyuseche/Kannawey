@@ -1,16 +1,19 @@
-// ¡LA CORRECCIÓN ESTÁ AQUÍ! "gemai" con "M"
+// Importa el paquete correcto (con "M") como en tu package.json
 import { GoogleGenAI, Type } from "@google/gemai"; 
 import { ViralIdea, ContentPillar } from '../types';
 
-// Vite usa 'import.meta.env' y el prefijo 'VITE_'
+// 1. Vite usa 'import.meta.env' en lugar de 'process.env'
+// 2. El nombre de la variable DEBE empezar con 'VITE_'
+// ¡NUNCA ESCRIBAS LA CLAVE AQUÍ!
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 let ai: GoogleGenAI | null = null;
 
-// Solo inicializamos la IA si la API Key existe
+// 3. Solo inicializamos la IA si la API Key existe
 if (API_KEY) {
   ai = new GoogleGenAI({ apiKey: API_KEY });
 } else {
+  // Esta advertencia SÍ se mostrará en la consola del navegador
   console.warn("ADVERTENCIA: La variable VITE_API_KEY no está configurada. Las funciones de IA no funcionarán.");
 }
 
@@ -72,9 +75,13 @@ export const generateViralIdeas = async (topic: string, platform: string, count:
     }
 
     try {
-        const prompt = `Actúa como un experto en marketing viral... (tu prompt)...`; // Tu prompt va aquí
+        const prompt = `Actúa como un experto en marketing viral y estratega de redes sociales para un artista musical emergente llamado Kannawey. Su estilo es una mezcla de synth-pop y música electrónica moderna.
+GA-A-CH: Tu misión es conquistar el mercado venezolano (tanto dentro de Venezuela como la diáspora).
+        Genera ${count} ideas de contenido viral, distintas e innovadoras, basadas en el siguiente tema: "${topic}".
+        La plataforma objetivo es ${platform}. Las ideas deben ser altamente atractivas, compartibles, y adaptadas al algoritmo y la cultura venezolana.
+        Enfócate en tácticas de marketing de guerrilla, crecimiento orgánico, y crear una fuerte conexión comunitaria con referencias culturales venezolanas. Evita ideas genéricas.`;
         const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash", // (Asegúrate que el nombre del modelo esté bien)
+            model: "gemini-2.5-flash",
             contents: prompt,
             config: {
                 responseMimeType: "application/json",
@@ -100,7 +107,11 @@ export const generateContentPillars = async (artistInfo: string): Promise<Conten
     }
 
     try {
-        const prompt = `Eres un estratega de marca... (tu prompt)...`; // Tu prompt va aquí
+        const prompt = `Eres un estratega de marca para artistas musicales. Tu cliente es Kannawey, un músico con un estilo synth-pop y electrónico.
+        El objetivo principal es penetrar el mercado venezolano y conectar profundamente con la diáspora y los que están en el país.
+        Analiza esta información sobre el artista: "${artistInfo}".
+        Basado en eso, define 4 pilares de contenido fundamentales para su marca. Cada pilar debe ser un tema o categoría de contenido recurrente que refuerce su identidad y conecte con la audiencia venezolana.
+        Piensa en temas como sus raíces, el proceso creativo, la cultura pop venezolana de los 80s/90s, la vida del músico, etc.`;
         const response = await ai.models.generateContent({
             model: "gemini-2.5-flash",
             contents: prompt,
