@@ -9,7 +9,7 @@ const COLORS = ['#db2777', '#00E0FF', '#FFD700', '#32CD32'];
 const ChartCard: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => (
     <div className="bg-surface p-6 rounded-xl shadow-lg border border-white/10 animate-slide-in-up">
         <h3 className="text-lg font-bold text-white font-title mb-4">{title}</h3>
-        {children}
+        {children} // Forzar actualización
     </div>
 );
 
